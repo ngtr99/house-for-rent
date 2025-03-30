@@ -33,9 +33,11 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['house-for-rent-production.up.railway.app']
+ALLOWED_HOSTS = ['house-for-rent-production.up.railway.app', 'localhost', '127.0.0.1']
 
-
+CSRF_TRUSTED_ORIGINS = [
+    'https://house-for-rent-production.up.railway.app',
+]
 # Application definition
 
 INSTALLED_APPS = [

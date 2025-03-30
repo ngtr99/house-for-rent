@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+Body {
+    font-size: 2vh;
+}
+
+h2 {
+    font-family: "Josefin Sans", sans-serif;
+    padding-top: 5vh;
+    text-align: center;
+    color: rgba(50, 133, 222, 0.78);
+}
+
+.house-card {
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    font-size: 2vh;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: row;
+}
+
+img {
+    width: 45vw;
+    max-width: 28vh;
+    object-fit: cover;
+}
