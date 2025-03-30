@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&display=swap');
+.NavBar {
+    background: linear-gradient(to right, #84a6e2, #2279cf);
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Ensures vertical alignment */
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.material-symbols-outlined {
+    color: white;
+    font-size: 3rem;
+}
+
+h1 {
+    font-family: "Big Shoulders Stencil", sans-serif;
+    color: white;
+    text-align: left;
+    margin: 0 1vh; /* Adjusted to prevent extra spacing */
+    font-size: 3vh;
+}

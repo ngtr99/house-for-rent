@@ -1,0 +1,33 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdjustHouse</title>
+    <link rel="stylesheet" href="{% static 'AdjustHouse.css' %}">
+</head>
+<body>
+    {% include 'NavBar.html' %}
+    <h2>ADJUST HOUSE</h2>
+    <div class="container">
+        <form action="{% url 'AdjustHouse' house.id %}" method="POST">
+            {% csrf_token %}
+            <label for="name">Name:</label>
+            <input style="width: 100%;" type="text" name="name" id="name" value="{{ house.name }}">
+            <label for="location">Location:</label>
+            <input style="width: 100%;" type="text" name="location" id="location" value="{{ house.location }}">
+            <label for="price">Price:</label>
+            <input style="width: 100%;" type="number" name="price" id="price" value="{{ house.price }}">
+            <label for="image">Image:</label>
+            <input type="file" name="image" id="image" accept="image/*">
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" rows="4" cols="50"></textarea>
+            <input type="submit" value="Adjust">
+        </form>
+        <div>
+            <p style="color:red">{{ message }}</p>
+        </div>
+    </div>
+</body>
+</html>

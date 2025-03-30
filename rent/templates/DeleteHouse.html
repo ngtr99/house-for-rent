@@ -1,0 +1,34 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeleteHouse</title>
+    <link rel="stylesheet" href="{% static 'DeleteHouse.css' %}">
+</head>
+<body>
+    {% include 'NavBar.html' %}
+    <h2>DELETE HOUSE</h2>
+    <form action="{% url 'DeleteHouse' house.id %}" method="POST">
+        {% csrf_token %}
+        <div class="house-card">
+            <div>
+                <img src="{{ house.image.url }}" alt="House Image" style="width: 200px; height: auto;">
+            </div>
+            <div>
+                <p for="name">Name: {{ house.name }}</p>
+                <p for="location">Location: {{ house.location }}</p>
+                <p for="price">Price: {{ house.price }}</p>
+                <p for="description">Description: {{ house.description }}</p>
+            </div>
+        </div>
+        <p style="text-align: center; color: rgba(129, 65, 58, 0.78)">Are you sure you want to delete this house?</p>
+        <div style="text-align: center;">
+            <button type="submit" style="background-color: rgba(112, 154, 225, 0.78); border: none; padding: 10px 20px; text-align: center; color: white; font-size: 2vh; margin: 4px 2px; cursor: pointer;">
+                Delete 
+            </button>
+        </div>
+    </form>
+</body>
+</html>

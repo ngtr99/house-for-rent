@@ -1,0 +1,38 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link rel="stylesheet" href="{% static 'HomePage.css' %}">
+</head>
+<body>
+    {% include 'NavBar.html' %}
+    <h2>WELCOME</h2>
+    <p> {{ message }}</p>
+    <div class="container">
+        {% for house in houses %}
+        <div class="house-card">
+            <div>
+                <img src="{{ house.image.url }}" alt="{{ house.name }}" class="house-image">
+            </div>
+            <div>    
+                <h3 style="text-align: center; color: rgba(50, 133, 222, 0.78)">{{ house.name }}</h3>
+                <p>Location: {{ house.location }}</p>
+                <p>Price: {{ house.price }}</p>
+                <p>Description: {{ house.description|linebreaks }}</p>
+                <div style="text-align: center;">
+                    <button style="background-color: rgba(112, 154, 225, 0.78); border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">
+                        <a href="{% url 'AdjustHouse' house.id %}" style="color: white; text-decoration: none;">Adjust</a>
+                    </button>
+                    <button style="background-color: rgba(112, 154, 225, 0.78); border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">
+                        <a href="{% url 'DeleteHouse' house.id %}" style="color: white; text-decoration: none;">Delete</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
